@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+.landing-section {
+  height: 100vh;
+}
+#section1 {
+  background-color: blueviolet;
+}
+#section2 {
+  background-color: crimson;
+}
+#section3 {
+  background-color: darkcyan;
+}
+#header {
+  height: 100vh;
+  background-color: darkgray;
+}
