@@ -3,11 +3,10 @@ const header = document.getElementById("header");
 
 const sections = document.getElementsByClassName("landing-section");
 
-header.addEventListener("click", () => {
-  navbar.innerHTML = navbar.innerHTML + `<div><a>cat</a></div>`;
-});
-console.log(sections);
-
+/* getting the link titles and their responsive target by selecting the 
+sections based on their class (.landing-section), then turning the resulted object
+into an array, from wich we extract the id by mapping
+*/
 function gettingLinks() {
   const sections = document.getElementsByClassName("landing-section");
   const sectionsId = [...sections];
@@ -17,6 +16,7 @@ function gettingLinks() {
 }
 gettingLinks();
 
+/* populate navbar with a tags to target the page sections */
 function updateNavbar(array) {
   for (element of array) {
     navbar.innerHTML =
