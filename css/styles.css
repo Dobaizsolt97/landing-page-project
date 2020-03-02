@@ -9,11 +9,25 @@ nav {
   height: 10vh;
   background-color: #333;
 }
-nav a {
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.link-list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  list-style-type: none;
+  cursor: pointer;
+}
+.link-list a {
   color: white;
-  text-decoration: none;
   text-transform: uppercase;
-  font-size: 24px;
+  text-decoration: none;
+  font-size: 1.5em;
 }
 .hero {
   background-image: url("/hero.jpg");
@@ -44,8 +58,8 @@ nav a {
   padding: 30px;
 }
 .aply {
-  border: none;
-  background-color: white;
+  border: 1px solid #7f0909;
+  background-color: transparent;
   color: #7f0909;
   border-radius: 20px;
   padding: 10px 40px;
