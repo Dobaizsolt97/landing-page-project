@@ -23,7 +23,7 @@ function updateNavbar(array) {
     links.innerHTML =
       links.innerHTML +
       // asigning the scroll function to the generated a tags
-      `<li><a onclick='smoothScroll(${element})' >${element}</a><li>`;
+      `<li class='${element}'><a onclick='smoothScroll(${element})' >${element}</a><li>`;
   }
 }
 
@@ -49,10 +49,28 @@ function smoothScroll(target) {
 
 window.onscroll = function() {
   scrollFunction();
+  const sections = document.getElementsByClassName("landing-section");
+  const sectionsId = [...sections];
+  const links = sectionsId.map(section => section.id);
+  for (link of links) {
+    let element = document.getElementById(`${link}`);
+    var bounding = element.getBoundingClientRect();
+    if (
+      bounding.top >= 0 &&
+      bounding.bottom <
+        (window.innerHeight || document.documentElement.clientHeight) + 120
+    ) {
+      navbar.querySelector(`.link-list > .${link} > a`).classList.add("active");
+    } else {
+      navbar
+        .querySelector(`.link-list > .${link} > a`)
+        .classList.remove("active");
+    }
+  }
 };
 
 // w3school way of implementing sticky navbars
-let sticky = navbar.offsetTop;
+var sticky = navbar.offsetTop;
 
 function scrollFunction() {
   if (window.pageYOffset >= sticky) {

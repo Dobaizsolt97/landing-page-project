@@ -6,7 +6,7 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 10vh;
+  height: 100px;
   background-color: #333;
 }
 
@@ -15,7 +15,9 @@ nav {
   top: 0;
   width: 100%;
 }
-
+.active {
+  border-bottom: 2px solid white;
+}
 .link-list {
   display: flex;
   justify-content: space-evenly;
@@ -37,14 +39,17 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 .hero h1 {
   color: white;
-  font-size: 4em;
+  font-size: 40px;
+  text-align: center;
 }
 .hero p {
   color: white;
-  font-size: 3em;
+  font-size: 30px;
+  text-align: center;
 }
 .landing-section {
   height: 100vh;
@@ -69,8 +74,8 @@ nav {
   color: #7f0909;
 }
 #hufflepuff {
-  background-color: #eee117;
-  color: #eee117;
+  background-color: #ffc500;
+  color: #ffc500;
 }
 #ravenclaw {
   background-color: #000a90;
@@ -92,4 +97,16 @@ nav {
 #slytherin:hover,
 #header {
   background-color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  .link-list a {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .link-list a {
+    font-size: 10px;
+  }
 }
