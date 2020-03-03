@@ -36,10 +36,15 @@ function smoothScroll(target) {
   let distance = 0;
   // determining the Y coordinate where we want to scroll based on
   // the relationsheep between the current location and the target
-  if (targetPozition > startPosition) {
+  if (targetPozition / startPosition == 2) {
+    //bug fix that disrupts navigation due to values
+    distance = targetPozition + startPosition;
+  } else if (targetPozition > startPosition) {
     distance = targetPozition - startPosition;
+    console.log(targetPozition, startPosition, distance);
   } else {
     distance = startPosition + targetPozition;
+    console.log(targetPozition, startPosition, distance);
   }
   window.scrollTo({
     top: distance,
@@ -48,7 +53,6 @@ function smoothScroll(target) {
 }
 
 window.onscroll = function() {
-  scrollFunction();
   const sections = document.getElementsByClassName("landing-section");
   const sectionsId = [...sections];
   const links = sectionsId.map(section => section.id);
@@ -72,10 +76,9 @@ window.onscroll = function() {
 // w3school way of implementing sticky navbars
 var sticky = navbar.offsetTop;
 
-function scrollFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }

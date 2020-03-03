@@ -1,6 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  position: relative;
+}
+:root {
+  --red-color: #7f0909;
+  --yellow-color: #ffc500;
+  --blue-color: #000a90;
+  --green-color: #0d6217;
 }
 nav {
   display: flex;
@@ -50,6 +61,19 @@ nav {
   color: white;
   font-size: 30px;
   text-align: center;
+  padding: 20px 0;
+}
+.to-top {
+  position: fixed;
+  top: 90vh;
+  right: 10vh;
+  background-color: #333;
+  color: white;
+  padding: 5px 30px;
+  border: none;
+}
+.to-top:hover {
+  transform: scale(1.2);
 }
 .landing-section {
   height: 100vh;
@@ -63,27 +87,43 @@ nav {
   padding: 30px;
 }
 .aply {
-  border: 1px solid #7f0909;
   background-color: transparent;
-  color: #7f0909;
+  margin-top: 10px;
+
   border-radius: 20px;
   padding: 10px 40px;
 }
+.red {
+  color: var(--red-color);
+  border: 1px solid var(--red-color);
+}
+.yellow {
+  color: var(--yellow-color);
+  border: 1px solid var(--yellow-color);
+}
+.blue {
+  color: var(--blue-color);
+  border: 1px solid var(--blue-color);
+}
+.green {
+  color: var(--green-color);
+  border: 1px solid var(--green-color);
+}
 #griffindor {
-  background-color: #7f0909;
-  color: #7f0909;
+  background-color: var(--red-color);
+  color: var(--red-color);
 }
 #hufflepuff {
-  background-color: #ffc500;
-  color: #ffc500;
+  background-color: var(--yellow-color);
+  color: var(--yellow-color);
 }
 #ravenclaw {
-  background-color: #000a90;
-  color: #000a90;
+  background-color: var(--blue-color);
+  color: var(--blue-color);
 }
 #slytherin {
-  background-color: #0d6217;
-  color: #0d6217;
+  background-color: var(--green-color);
+  color: var(--green-color);
 }
 
 #header {
